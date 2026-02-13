@@ -30,6 +30,7 @@ typedef struct {
     char config_path[512];
     char device_name[DEVICE_NAME_MAX];
     char error_msg[256];
+    int slot;
 
     int fifo_fd;
     pid_t daemon_pid;
@@ -155,6 +156,8 @@ static int write_config(airplay_instance_t *inst) {
     fprintf(fp,
         "general = {\n"
         "  name = \"%s\";\n"
+        "  port = %d;\n"
+        "  udp_port_base = %d;\n"
         "  interpolation = \"basic\";\n"
         "  drift_tolerance_in_seconds = 0.002;\n"
         "};\n"
@@ -164,6 +167,8 @@ static int write_config(airplay_instance_t *inst) {
         "  audio_backend_buffer_desired_length_in_seconds = 0.2;\n"
         "};\n",
         inst->device_name,
+        5000 + inst->slot - 1,    /* RTSP port: 5000, 5001, ... */
+        6001 + (inst->slot - 1) * 10,  /* UDP base: 6001, 6011, ... */
         inst->fifo_path);
 
     fclose(fp);
@@ -273,7 +278,7 @@ static int create_fifo(airplay_instance_t *inst) {
     if (!inst) return -1;
 
     snprintf(inst->fifo_path, sizeof(inst->fifo_path),
-             "/tmp/airplay-audio-%d", getpid());
+             "/tmp/airplay-audio-%d", inst->slot);
 
     /* Remove stale FIFO if it exists */
     (void)unlink(inst->fifo_path);
@@ -388,14 +393,14 @@ static void* v2_create_instance(const char *module_dir, const char *json_default
     inst = calloc(1, sizeof(*inst));
     if (!inst) return NULL;
 
-    int slot = ++g_instance_counter;
+    inst->slot = ++g_instance_counter;
 
     snprintf(inst->module_dir, sizeof(inst->module_dir), "%s",
              module_dir ? module_dir : ".");
     snprintf(inst->device_name, sizeof(inst->device_name),
-             "Move - Slot %d", slot);
+             "Move - Slot %d", inst->slot);
     snprintf(inst->config_path, sizeof(inst->config_path),
-             "/tmp/airplay-config-%d.conf", getpid());
+             "/tmp/airplay-config-%d.conf", inst->slot);
 
     inst->gain = 1.0f;
     inst->fifo_fd = -1;
