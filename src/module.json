@@ -2,7 +2,7 @@
   "id": "airplay",
   "name": "AirPlay",
   "abbrev": "AP",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "AirPlay audio receiver - stream audio from iPhone, iPad, or Mac",
   "author": "charlesvestal",
   "license": "MIT",
