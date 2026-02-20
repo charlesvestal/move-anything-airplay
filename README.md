@@ -1,6 +1,6 @@
-# Move Anything - AirPlay Receiver
+# Move Everything - AirPlay Receiver
 
-An AirPlay audio receiver module for [Move Anything](https://github.com/charlesvestal/move-anything) on Ableton Move hardware. Stream audio from your iPhone, iPad, or Mac directly to Move's signal chain.
+An AirPlay audio receiver module for [Move Everything](https://github.com/charlesvestal/move-anything) on Ableton Move hardware. Stream audio from your iPhone, iPad, or Mac directly to Move's signal chain.
 
 ## Features
 
@@ -8,11 +8,11 @@ An AirPlay audio receiver module for [Move Anything](https://github.com/charlesv
 - Broadcasts as "Move - Slot N" on the network (slot number auto-assigned)
 - Chainable sound generator — works in the Signal Chain with audio FX
 - Gain control exposed to Shadow UI knobs
-- Zero device-side dependencies beyond what Move Anything provides (avahi, OpenSSL)
+- Zero device-side dependencies beyond what Move Everything provides (avahi, OpenSSL)
 
 ## Requirements
 
-- Move Anything host (v0.3.0+)
+- Move Everything host (v0.3.0+)
 - avahi-daemon running on the device (standard on Move)
 - WiFi network shared between Move and the AirPlay source device
 
@@ -53,3 +53,10 @@ Bundled shared libraries (`lib/`) provide libconfig and libavahi-client for devi
 ## License
 
 MIT
+
+## AI Assistance Disclaimer
+
+This module is part of Move Everything and was developed with AI assistance, including Claude, Codex, and other AI assistants.
+
+All architecture, implementation, and release decisions are reviewed by human maintainers.  
+AI-assisted content may still contain errors, so please validate functionality, security, and license compatibility before production use.
