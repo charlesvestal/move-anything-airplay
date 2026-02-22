@@ -551,6 +551,17 @@ static void v2_render_block(void *instance, int16_t *out_interleaved_lr, int fra
             out_interleaved_lr[i] = (int16_t)s;
         }
     }
+
+    /* Prevent the host's idle gate from sleeping this slot while the daemon
+     * is running.  AirPlay audio arrives asynchronously from the network so
+     * there can be long periods of silence between connections.  A single
+     * sample above the silence threshold (DSP_SILENCE_LEVEL = 4) keeps the
+     * render loop active so pump_pipe() drains the FIFO in real-time.
+     * This must be unconditional — after a track ends, the slot goes silent
+     * and the idle gate would kick in before the next track starts. */
+    if (inst->daemon_running) {
+        out_interleaved_lr[needed - 1] |= 5;
+    }
 }
 
 static plugin_api_v2_t g_plugin_api_v2 = {
