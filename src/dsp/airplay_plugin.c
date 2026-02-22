@@ -238,6 +238,12 @@ static int start_daemon(airplay_instance_t *inst) {
         snprintf(lib_path, sizeof(lib_path), "%s/lib", inst->module_dir);
         setenv("LD_LIBRARY_PATH", lib_path, 1);
 
+        /* Clear LD_PRELOAD so the Move shim hooks (ioctl, sendto, connect,
+         * send, open, close, read) don't interfere with shairport-sync.
+         * The D-Bus connect/send hooks in particular can intercept Avahi
+         * communication and break AirPlay service registration. */
+        unsetenv("LD_PRELOAD");
+
         execl(shairport_path, "shairport-sync",
               "-c", inst->config_path,
               "-o", "pipe",
