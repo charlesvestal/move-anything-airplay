@@ -81,6 +81,7 @@ echo "Compiling v2 DSP plugin..."
   -lpthread -lm
 
 cat src/module.json > dist/airplay/module.json
+[ -f src/help.json ] && cat src/help.json > dist/airplay/help.json
 cat src/ui.js > dist/airplay/ui.js
 cat src/ui_chain.js > dist/airplay/ui_chain.js
 cat build/module/dsp.so > dist/airplay/dsp.so

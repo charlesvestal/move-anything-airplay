@@ -1,0 +1,116 @@
+{
+  "title": "AirPlay",
+  "children": [
+    {
+      "title": "Overview",
+      "lines": [
+        "AirPlay audio",
+        "receiver for Move.",
+        "",
+        "Stream audio from",
+        "iPhone, iPad, or Mac",
+        "directly to a Signal",
+        "Chain slot.",
+        "",
+        "Appears as",
+        "\"Move - Slot N\" on",
+        "your local network.",
+        "",
+        "No MIDI required -",
+        "audio streams over",
+        "WiFi."
+      ]
+    },
+    {
+      "title": "Setup",
+      "lines": [
+        "1. Load AirPlay into",
+        "   a Signal Chain",
+        "   slot",
+        "",
+        "2. On your Apple",
+        "   device, open",
+        "   AirPlay/audio",
+        "   output settings",
+        "",
+        "3. Select",
+        "   \"Move - Slot N\"",
+        "",
+        "4. Audio streams",
+        "   through Move",
+        "",
+        "Requires Move and",
+        "your device on the",
+        "same WiFi network.",
+        "",
+        "Multiple slots can",
+        "each run AirPlay",
+        "with separate names."
+      ]
+    },
+    {
+      "title": "Controls",
+      "children": [
+        {
+          "title": "Parameters",
+          "lines": [
+            "Gain: 0.0 to 2.0",
+            " Output volume.",
+            " Default: 1.0",
+            "",
+            "Device Name:",
+            " Change the name",
+            " shown on AirPlay",
+            " device list.",
+            " Default:",
+            " \"Move - Slot N\"",
+            "",
+            "Restart:",
+            " Restart the AirPlay",
+            " receiver if it",
+            " stops responding."
+          ]
+        },
+        {
+          "title": "Status Display",
+          "lines": [
+            "The module shows:",
+            "",
+            "Waiting:",
+            " Receiver is running",
+            " and ready for a",
+            " connection.",
+            "",
+            "Playing:",
+            " Actively receiving",
+            " audio from a",
+            " device.",
+            "",
+            "Stopped/Error:",
+            " Receiver has",
+            " stopped. Use the",
+            " Restart option."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Tips",
+      "lines": [
+        "Chain audio FX after",
+        "AirPlay to process",
+        "streamed audio with",
+        "reverb, delay, etc.",
+        "",
+        "Audio is buffered",
+        "(up to 5 seconds)",
+        "so there may be",
+        "slight latency.",
+        "",
+        "The receiver stays",
+        "active even when no",
+        "device is connected."
+      ]
+    }
+  ]
+}
