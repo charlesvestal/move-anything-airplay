@@ -1,7 +1,4 @@
 {
-  "version": "0.1.2",
-  "download_url": "https://github.com/charlesvestal/move-anything-airplay/releases/download/v0.1.2/airplay-module.tar.gz",
-  "name": "AirPlay",
-  "description": "AirPlay audio receiver - stream audio from iPhone, iPad, or Mac",
-  "repo_url": "https://github.com/charlesvestal/move-anything-airplay"
+  "version": "0.1.3",
+  "download_url": "https://github.com/charlesvestal/move-anything-airplay/releases/download/v0.1.3/airplay-module.tar.gz"
 }
