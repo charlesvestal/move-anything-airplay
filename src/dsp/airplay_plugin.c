@@ -1,6 +1,7 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <pthread.h>
+#include <pwd.h>
 #include <signal.h>
 #include <stdbool.h>
 #include <stdint.h>
@@ -143,6 +144,11 @@ static void clear_ring(airplay_instance_t *inst) {
 
 /* --- shairport-sync daemon management --- */
 
+static void chown_to_ableton(const char *path) {
+    struct passwd *pw = getpwnam("ableton");
+    if (pw) chown(path, pw->pw_uid, pw->pw_gid);
+}
+
 static int write_config(airplay_instance_t *inst) {
     FILE *fp;
     if (!inst) return -1;
@@ -172,6 +178,7 @@ static int write_config(airplay_instance_t *inst) {
         inst->fifo_path);
 
     fclose(fp);
+    chown_to_ableton(inst->config_path);
     return 0;
 }
 
