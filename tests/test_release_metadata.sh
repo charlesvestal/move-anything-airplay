@@ -27,7 +27,7 @@ fi
 
 version=$(jq -r '.version' "$release_json")
 module_version=$(jq -r '.version' "$module_json")
-expected_url="https://github.com/charlesvestal/move-anything-airplay/releases/download/v${version}/airplay-module.tar.gz"
+expected_url="https://github.com/charlesvestal/move-everything-airplay/releases/download/v${version}/airplay-module.tar.gz"
 url=$(jq -r '.download_url' "$release_json")
 
 if [ -z "$version" ] || [ "$version" = "null" ]; then
