@@ -1,6 +1,6 @@
 # Move Everything - AirPlay Receiver
 
-An AirPlay audio receiver module for [Move Everything](https://github.com/charlesvestal/move-anything) on Ableton Move hardware. Stream audio from your iPhone, iPad, or Mac directly to Move's signal chain.
+An AirPlay audio receiver module for [Move Everything](https://github.com/charlesvestal/move-everything) on Ableton Move hardware. Stream audio from your iPhone, iPad, or Mac directly to Move's signal chain.
 
 ## Features
 
