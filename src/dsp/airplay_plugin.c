@@ -20,7 +20,7 @@
 #define RING_SAMPLES        (MOVE_SAMPLE_RATE * 2 * RING_SECONDS)
 #define AUDIO_IDLE_MS       3000
 #define DEVICE_NAME_MAX     128
-#define LOG_PATH            "/data/UserData/move-anything/cache/airplay-runtime.log"
+#define LOG_PATH            "/data/UserData/schwung/cache/airplay-runtime.log"
 
 static const host_api_v1_t *g_host = NULL;
 static int g_instance_counter = 0;

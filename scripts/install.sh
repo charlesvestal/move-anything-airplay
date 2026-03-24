@@ -5,7 +5,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_ROOT="$(dirname "$SCRIPT_DIR")"
 MODULE_ID="airplay"
 DEVICE_HOST="${DEVICE_HOST:-move.local}"
-REMOTE_BASE="/data/UserData/move-anything/modules/sound_generators"
+REMOTE_BASE="/data/UserData/schwung/modules/sound_generators"
 REMOTE_DIR="$REMOTE_BASE/$MODULE_ID"
 DIST_DIR="$REPO_ROOT/dist/$MODULE_ID"
 
